@@ -58,12 +58,16 @@ def l2ln(List):
     return Fnode.next
 
 
-def ln2l(Node):
+def ln2l(Node, max_len=10000):
     List = list()
     node = Node
+    cnt = 0
     while node:
         List.append(node.val)
         node = node.next
+        cnt += 1
+        if cnt > max_len:
+            break
     return List
 
 
